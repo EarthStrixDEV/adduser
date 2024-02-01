@@ -1,29 +1,29 @@
 
-import { Outlet, Link } from "react-router-dom";
 
 function Adduser() {
 
   return (
     <div className='flex-row justify-start ml-56'>
-      
+
       <div style={{ flex: 20 }} className='mx-5 my-5'>
         <div style={{ flex: 5 }} className=" flex flex-row justify-start text-black text-3xl font-bold">
           <div className='pr-1'>ข้อมูลผู้ใช้งาน</div>
           <div className='text-rose-color'>อาจารย์</div>
         </div>
         <div style={{ flex: 5 }} className='flex flex-row justify-center text-gray-50 text-xl font-bold p-5'>
-          <button className='flex flex-col rounded-md bg-button-color p-3.5 w-1/5 p-5 m-5 drop-shadow-lg hover:bg-rose-800 active:bg-neutral-800 justify-center items-center'> <p>อาจารย์</p><p>5</p> </button>
-          <button className='flex flex-col rounded-md bg-button-color p-3.5 w-1/5 m-5 p-5 drop-shadow-lg hover:bg-rose-800 active:bg-neutral-800 justify-center items-center' > <p>ผู้ดูแลระบบ</p><p>5</p> </button>
+          <button className='flex flex-col rounded-md bg-button-color p-3.5 w-1/5 p-5 m-5 drop-shadow-lg hover:bg-rose-800 active:bg-neutral-800 justify-center items-center'>
+            <p>อาจารย์</p>
+            <p>5</p>
+          </button>
+          <button className='flex flex-col rounded-md bg-button-color p-3.5 w-1/5 m-5 p-5 drop-shadow-lg hover:bg-rose-800 active:bg-neutral-800 justify-center items-center' >
+            <p>ผู้ดูแลระบบ</p>
+            <p>5</p>
+
+          </button>
         </div>
         <div style={{ flex: 10 }} className='flex flex-row justify-center'>
           <div className='bg-from-color rounded-lg  p-5 mx-10 w-9/12'>
-            <div className='flex justify-end mb-5'>
-              <button className='bg-slate-50 rounded-full hover:bg-rose-800 active:bg-neutral-800 '>
-                
-                  <img src="https://cdn0.iconfinder.com/data/icons/phosphor-light-vol-4/256/user-circle-plus-light-256.png" width={40} alt="add user" />
-                
-              </button>
-            </div>
+           
             <form class=" h-60 touch-none justify-brtween m-5 text-name-color">
 
               <div className='justify-between flex flex-row drop-shadow-md bg-white rounded-full m-3'>
