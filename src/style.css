@@ -60,7 +60,10 @@ form {
   margin-top: 15px;
 }
 
-
+.underline-text {
+  border-bottom: 1px solid black; /* เปลี่ยนสีและขนาดของขีดเส้นตามต้องการ */
+  display: inline-block; /* ให้ขีดเส้นปรากฏแนบข้อความ */
+}
 
 button {
   margin-bottom : 10px;
