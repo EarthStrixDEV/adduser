@@ -3,7 +3,7 @@
 function Adduser() {
 
   return (
-    <div className='flex-row justify-start ml-56'>
+    <div className='flex-row justify-start ml-24'>
 
       <div style={{ flex: 20 }} className='mx-5 my-5'>
         <div style={{ flex: 5 }} className=" flex flex-row justify-start text-black text-3xl font-bold">

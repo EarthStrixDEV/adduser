@@ -61,7 +61,15 @@ const Layout = () => {
         </div>
 
         <div className='drawerList'>
-          <div className='bg-lime-600 p-1 rounded-md w-3/6'>เปิด</div>
+          <div className=''>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input class="sr-only peer" value="" type="checkbox"/>
+                <div class="peer rounded-full outline-none duration-100 after:duration-500 w-24 h-10 bg-white peer-focus:outline-none   
+                after:content-['ปิด'] after:absolute after:outline-none after:rounded-full after:h-8 after:w-10  after:top-1 after:left-1 after:flex after:justify-center after:items-center  after:text-white after:bg-no-color  peer-checked:after:translate-x-12 
+                peer-checked:after:content-['เปิด'] peer-checked:after:bg-yes-color peer-checked:after:border-white ">
+                </div>
+            </label>
+          </div>
           <button onClick={toggleDrawer} >
             <IoLockOpen size={40} />
           </button>

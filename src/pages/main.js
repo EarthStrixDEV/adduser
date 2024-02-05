@@ -5,7 +5,7 @@ import { TiDelete } from "react-icons/ti";
 
 const Main = () => {
   return (
-    <div className='ml-56'>
+    <div className='ml-24'>
       <div className='mx-5 my-5 flex flex-col justify-start text-black font-bold '>
         <p className='text-3xl '>ยินดีต้อนรับเข้าสู่ระบบ</p>
         <div className='flex flex-row p-6 items-center'>

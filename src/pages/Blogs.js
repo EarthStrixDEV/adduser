@@ -1,5 +1,12 @@
+
+
 const Blogs = () => {
-    return <h1>Blog Articles</h1>;
+  return (
+    <div >
+
+     
+    </div>
+    );
   };
-  
-  export default Blogs;
+
+export default Blogs;

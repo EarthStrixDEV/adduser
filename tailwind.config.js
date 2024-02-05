@@ -9,7 +9,9 @@ module.exports = {
         'button-color' : '#B67575',
         'rose-color' : '#A34E4E',
         'from-color' : '#EACDCD',
-        'name-color' : '#7A1E1E'
+        'name-color' : '#7A1E1E',
+        'yes-color' : '#049B41',
+        'no-color' : '#E30137',
       }
     },
   },
