@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 const Contact = () => {
-  const [subject_thai_name, setSubject_thai_name] = useState("");
-  const [subject_eng_name, setSubject_eng_name] = useState("");
+  const [subject_nameTH, setSubject_nameTH] = useState("");
+  const [subject_nameEN, setSubject_nameEN] = useState("");
   const [credit, setCredit] = useState(0);
   const [school_year, setSchool_year] = useState("");
   const [subject_id, setSubject_id] = useState("");
@@ -25,9 +25,9 @@ const Contact = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          subject_real_id: subject_id,
-          subject_eng_name: subject_eng_name,
-          subject_thai_name: subject_thai_name,
+          subject_id: subject_id,
+          subject_nameEN: subject_nameEN,
+          subject_nameTH: subject_nameTH,
           credit: credit,
           type: type,
           school_year: school_year,
@@ -134,7 +134,7 @@ const Contact = () => {
                   type="text"
                   className="rounded-full p-3 text-sm py-1.5 w-3/5  "
                   placeholder="ชื่อวิชาภาษาไทย"
-                  onChange={(event) => setSubject_thai_name(event.target.value)}
+                  onChange={(event) => setSubject_nameTH(event.target.value)}
                 />
               </div>
 
@@ -146,7 +146,7 @@ const Contact = () => {
                   type="text"
                   className="rounded-full p-3 text-sm py-1.5 w-3/5  "
                   placeholder="ชื่อวิชาภาษาอังกฤษ"
-                  onChange={(event) => setSubject_eng_name(event.target.value)}
+                  onChange={(event) => setSubject_nameEN(event.target.value)}
                 />
               </div>
 
@@ -195,7 +195,8 @@ const Contact = () => {
           <thead>
             <tr>
               <th>รหัสวิชา</th>
-              <th>ชื่อวิชา</th>
+              <th>ชื่อวิชาภาษาอังกฤษ</th>
+              <th>ชื่อวิชาภาษาไทย</th>
               <th>หน่วยกิต</th>
               <th>ประเภท</th>
               <th>
@@ -231,10 +232,13 @@ const Contact = () => {
               courseData.map((item) => (
                 <tr>
                   <td>
-                    <p>{item.subject_real_id}</p>
+                    <p>{item.subject_id}</p>
                   </td>
                   <td>
-                    <p>{item.subject_eng_name}</p>
+                    <p>{item.subject_nameEN}</p>
+                  </td>
+                  <td>
+                    <p>{item.subject_nameTH}</p>
                   </td>
                   <td>
                     <p>{item.credit}</p>
