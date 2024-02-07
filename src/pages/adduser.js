@@ -38,9 +38,7 @@ function Adduser() {
         </div>
         <div style={{ flex: 10 }} className='flex flex-row justify-center'>
           <div className='bg-from-color rounded-lg  p-5 mx-10 w-9/12'>
-           
             <form class=" h-60 touch-none justify-brtween m-5 text-name-color">
-
               {
                 data.map((item) => { 
                   if (filter === true) {
@@ -55,7 +53,7 @@ function Adduser() {
                             </div>
                           </div>
                           <div className='flex items-center mr-2'>
-                            <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" onClick={() => deleteUser(item.id)} />
+                            <img className='m-2 cursor-pointer' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" onClick={() => deleteUser(item.id)} />
                           </div>
                         </div>
                       )     
@@ -76,7 +74,7 @@ function Adduser() {
                             </div>
                           </div>
                           <div className='flex items-center mr-2'>
-                            <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" onClick={() => deleteUser(item.id)}  />
+                            <img className='m-2 cursor-pointer' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" onClick={() => deleteUser(item.id)}  />
                           </div>
                         </div>
                       )     
