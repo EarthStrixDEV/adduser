@@ -20,7 +20,9 @@ const Layout = () => {
   };
   return (
     <>
-
+{isDrawerOpen && (
+        <div className={`overlay ${isDrawerOpen ? 'active' : ''}`}></div>
+      )}
       <div className={`mini-drawer ${isDrawerOpen ? 'open' : 'closed'}`}>
         {/* Drawer content goes here */}
         <div className='drawerMenu'>
