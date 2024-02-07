@@ -1,7 +1,15 @@
-
+import { func } from "prop-types";
+import React,{useState ,useEffect} from "react";
 
 function Adduser() {
-
+  const [data ,setData] = useState([])
+  useEffect(() => {
+    (async function() {
+      const res = await fetch('http://localhost:4000/user/getAllUser')
+      const data = await res.json()
+      setData(data)
+    })()
+  }, [])
   return (
     <div className='flex-row justify-start ml-24'>
 
@@ -13,11 +21,11 @@ function Adduser() {
         <div style={{ flex: 5 }} className='flex flex-row justify-center text-gray-50 text-xl font-bold p-5'>
           <button className='flex flex-col rounded-md bg-button-color p-3.5 w-1/5 p-5 m-5 drop-shadow-lg hover:bg-rose-800 active:bg-neutral-800 justify-center items-center'>
             <p>อาจารย์</p>
-            <p>5</p>
+            <p>{data.filter(item => item.isadmin === 0).length}</p>
           </button>
           <button className='flex flex-col rounded-md bg-button-color p-3.5 w-1/5 m-5 p-5 drop-shadow-lg hover:bg-rose-800 active:bg-neutral-800 justify-center items-center' >
             <p>ผู้ดูแลระบบ</p>
-            <p>5</p>
+            <p>{data.filter(item => item.isadmin === 1).length}</p>
 
           </button>
         </div>
@@ -26,83 +34,22 @@ function Adduser() {
            
             <form class=" h-60 touch-none justify-brtween m-5 text-name-color">
 
-              <div className='justify-between flex flex-row drop-shadow-md bg-white rounded-full m-3'>
-                <div className='flex items-center'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-256.png" width={40} alt="add user" />
-                  <div className='flex flex-col font-bold'>
-                    <p>สมใจ แสนดี</p>
-                    <p>สถานะ: อาจารย์</p>
+              {
+                data.map((item) => (
+                  <div className='justify-between flex flex-row drop-shadow-md bg-white rounded-full m-3'>
+                    <div className='flex items-center'>
+                      <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-256.png" width={40} alt="add user" />
+                      <div className='flex flex-col font-bold'>
+                        <p>{item.name} {item.lastname}</p>
+                        <p>สถานะ: {item.isadmin == 0 ? "อาจารย์" : "แอดมิน"}</p>
+                      </div>
+                    </div>
+                    <div className='flex items-center mr-2'>
+                      <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" />
+                    </div>
                   </div>
-                </div>
-                <div className='flex items-center mr-2'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" />
-                </div>
-              </div>
-
-              <div className='justify-between flex flex-row drop-shadow-md bg-white rounded-full m-3'>
-                <div className='flex items-center'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-256.png" width={40} alt="add user" />
-                  <div className='flex flex-col font-bold'>
-                    <p>สมใจ แสนดี</p>
-                    <p>สถานะ: อาจารย์</p>
-                  </div>
-                </div>
-                <div className='flex items-center mr-2'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" />
-                </div>
-              </div>
-
-              <div className='justify-between flex flex-row drop-shadow-md bg-white rounded-full m-3'>
-                <div className='flex items-center'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-256.png" width={40} alt="add user" />
-                  <div className='flex flex-col font-bold'>
-                    <p>สมใจ แสนดี</p>
-                    <p>สถานะ: อาจารย์</p>
-                  </div>
-                </div>
-                <div className='flex items-center mr-2'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" />
-                </div>
-              </div>
-
-              <div className='justify-between flex flex-row drop-shadow-md bg-white rounded-full m-3'>
-                <div className='flex items-center'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-256.png" width={40} alt="add user" />
-                  <div className='flex flex-col font-bold'>
-                    <p>สมใจ แสนดี</p>
-                    <p>สถานะ: อาจารย์</p>
-                  </div>
-                </div>
-                <div className='flex items-center mr-2'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" />
-                </div>
-              </div>
-
-              <div className='justify-between flex flex-row drop-shadow-md bg-white rounded-full m-3'>
-                <div className='flex items-center'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-256.png" width={40} alt="add user" />
-                  <div className='flex flex-col font-bold'>
-                    <p>สมใจ แสนดี</p>
-                    <p>สถานะ: อาจารย์</p>
-                  </div>
-                </div>
-                <div className='flex items-center mr-2'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" />
-                </div>
-              </div>
-
-              <div className='justify-between flex flex-row drop-shadow-md bg-white rounded-full m-3'>
-                <div className='flex items-center'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-256.png" width={40} alt="add user" />
-                  <div className='flex flex-col font-bold'>
-                    <p>สมใจ แสนดี</p>
-                    <p>สถานะ: อาจารย์</p>
-                  </div>
-                </div>
-                <div className='flex items-center mr-2'>
-                  <img className='m-2' src="https://cdn1.iconfinder.com/data/icons/line-free/24/Recycle_bin_-256.png" width={20} alt="delete" />
-                </div>
-              </div>
+                ))
+              }
 
             </form>
           </div>
