@@ -9,7 +9,7 @@ function Adduser() {
       const data = await res.json()
       setData(data)
     })()
-  }, [])
+  }, [data])
   async function deleteUser(id) {
     try{
       await fetch(`http://localhost:4000/admin/deleteUser/${id}`)
